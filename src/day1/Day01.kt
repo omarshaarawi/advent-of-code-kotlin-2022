@@ -1,6 +1,8 @@
+package day1
+
 import java.io.File
 
-fun main() { // ktlint-disable filename
+fun main() {
     fun part1(input: String): Int {
         val data = input.split("\n\n").map { elf ->
             elf.lines().map { it.toInt() }
@@ -18,10 +20,10 @@ fun main() { // ktlint-disable filename
     }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = File("src/Day01_test.txt").readText()
+    val testInput = File("src/Day1/Day01_test.txt").readText()
     check(part1(testInput) == 24000)
 
-    val input = File("src/Day01.txt").readText()
+    val input = File("src/Day1/Day01.txt").readText()
     println(part1(input))
     println(part2(input))
 }
