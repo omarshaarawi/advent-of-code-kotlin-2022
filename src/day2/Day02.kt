@@ -9,7 +9,6 @@ import day2.Result.LOSE
 import day2.Result.WIN
 import readInput
 
-
 enum class Move(val point: Int, val move: String) {
     A(1, "rock"), B(2, "paper"), C(3, "scissors"),
     X(1, "rock"), Y(2, "paper"), Z(3, "scissors");
@@ -26,7 +25,7 @@ enum class Move(val point: Int, val move: String) {
 
             RelationShip(C, X, WIN), // scissor vs rock
             RelationShip(C, Y, LOSE), // scissor vs paper
-            RelationShip(C, Z, DRAW), // scissor vs scissor
+            RelationShip(C, Z, DRAW) // scissor vs scissor
         )
     }
 }
@@ -38,7 +37,6 @@ enum class Result(val points: Int) {
 data class RelationShip(val opponent: Move, val me: Move, val result: Result)
 
 fun main() {
-
     fun part1(): Int {
         val input = readInput("day2/Day02").map {
             val (a, b) = it.split(" ")
@@ -53,7 +51,6 @@ fun main() {
         }
 
         return points.sum()
-
     }
 
     fun part2(): Int {
@@ -82,12 +79,9 @@ fun main() {
             relationship.me.point.plus(relationship.result.points)
         }
 
-
         return points.sum()
     }
 
-// test if implementation meets criteria from the description, like:
     println(part1())
     println(part2())
-
 }
